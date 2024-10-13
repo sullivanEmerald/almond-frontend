@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import ADMIN_PAGES from "../adminpages/allpages";
-import Adminlayout from "../middleware/adminlayout";
+import ADMIN_PAGES from "@/admin/adminpages/allpages";
+import Adminlayout from "@/admin/middleware/adminlayout";
 import '@/admin/styles/main.css'
 
-const { HOME, CREATE, LOGIN } = ADMIN_PAGES;
+const { HOME, CREATE, LOGIN, REGISTER } = ADMIN_PAGES;
 
 const AdminRoutes = () => {
     return (
@@ -11,6 +11,7 @@ const AdminRoutes = () => {
             <Route path="admin">
                 {/* Login route without AdminLayout */}
                 <Route index element={<LOGIN />} />
+                <Route path="register" element={<REGISTER />} />
                 
                 {/* Other admin routes with AdminLayout */}
                 <Route element={<Adminlayout />}>
