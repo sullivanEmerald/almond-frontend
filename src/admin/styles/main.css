@@ -1,0 +1,148 @@
+/****************************************
+    COMMON SYLINGS :  BUTTON, INPUTS
+*****************************************/
+button {
+    background: #15357a;
+    color: #FFF;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px !important; 
+    width: 40%;
+    transition: all 1s ease-in-out;
+    display: block;
+    margin: 0 auto !important; 
+}
+
+
+button:hover{
+    opacity: 80%;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+/****************************************
+    ADMIN: REGISTRATION AND LOGIN SETTING
+*****************************************/
+.AdminProjectLinks {
+    text-decoration: none;
+    color: #15357a;
+    padding: 10px;
+    transition: all 0.3s ease-in;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.AdminProjectLinks:hover {
+    background: #15357a;
+    color: #fff;
+    border-radius: 9999px;
+    transform: scale(1.1)
+}
+
+/*********************************************************************
+    FORMS : LAYOUT && INPUTS && FORGOT PASSWORD && FORGOT PASSWORD
+***********************************************************************/
+.formDesignSetup {
+    width: 50%;
+    margin: 2% auto;
+    border: 1px solid #15357a;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.form-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 10px;
+}
+
+.forgot_password_link{
+    position: absolute;
+    right: 5px;
+}
+
+
+.formInputField {
+    border-color: #15357a; 
+    box-shadow: none !important; 
+    border-radius: 5px; 
+    padding: 10px; 
+}
+
+.fieldLabel{
+    padding: 0 10px;
+    color: #15357a;
+}
+
+/****************************************
+    LOGIN
+*****************************************/
+
+.Login-header {
+    background: #15357a;
+    color: #FFF;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    padding: 5px;
+}
+
+.form-section{
+    padding: 15px;
+}
+
+.adminPanelWelcome {
+    font-size: 20px;
+    font-weight: bold;
+    color: #15357a;
+}
+
+.mainHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+/****************************************
+    NAVIGATION BAR
+*****************************************/
+
+.admin_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.projectAdminLogo {
+    flex-basis: 10%;
+}
+
+.admin_header>nav {
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.adminLinKList {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 60px;
+
+}

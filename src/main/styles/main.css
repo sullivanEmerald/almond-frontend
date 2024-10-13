@@ -1,0 +1,33 @@
+
+/************************************************
+    MAIN PAGE STYLING (color : #f7dcd7), color: #4b0af3;
+************************************************/
+
+/* header */
+.index_header {
+    background: #fff;
+    color: #15357a;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px 20px;
+
+
+}
+
+.searchInputField {
+    width: 40%;
+    padding: 10px;
+    background: #f0f5ff;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    font-size: 15px;
+}
+.searchInputField::placeholder{
+    color: #15357a;
+    font-family: DM Sans;
+   
+}
