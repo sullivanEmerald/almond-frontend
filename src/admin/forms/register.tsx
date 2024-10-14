@@ -21,8 +21,8 @@ const RegisterForm = () => {
 
                 <button type="submit">Submit</button>
 
-                <Link className='auth_redirect_link' to='/admin/register'>
-                    Don't have an account? Sign up
+                <Link className='auth_redirect_link' to='/admin'>
+                    Already have an account? Sign In
                 </Link>
             </Form>
         </>
