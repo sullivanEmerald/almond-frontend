@@ -1,7 +1,16 @@
+import FormLayout from "../middleware/formLayout";
+import FormHeader from "../components/formheader";
+import ProductForm from "../forms/create";
+
 const CreateProduct = () => {
     return (
         <>
-            <p>This the admin create product page </p>       
+            <section>
+                <FormLayout >
+                    <FormHeader name="Create Product" />
+                    <ProductForm />
+                </FormLayout>
+            </section>
         </>
     )
 }

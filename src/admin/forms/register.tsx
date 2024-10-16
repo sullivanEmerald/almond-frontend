@@ -22,7 +22,7 @@ const RegisterForm = () => {
                 ))}
 
                 <SubmitButton label='Register'/>
-                <Redirectlink to={routes.login} question="Already have an account? Sign in" />
+                <Redirectlink to={routes.index} question="Already have an account? Sign in" />
             </Form>
         </>
     );
