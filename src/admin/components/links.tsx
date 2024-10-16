@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom"
-import Links from "../links/link"
+import Navlinks from "../data/links";
 
 const AdminLinks = () => {
     return (
         <>
-            <ul>
-                {Links?.map(({ label, href }) => (
-                    <li>
-                        <Link to={href}>{label}</Link>
-                    </li>
-                ))}
-            </ul>
+            <nav>
+                <ul className="admin_list">
+                    {Navlinks?.map(({ label, href, icon }) => (
+                        <li className="admin_links">
+                            <Link className="admin_goto" to={href}>{icon} {label}</Link>
+                        </li> 
+                    ))}
+                </ul>
+            </nav>
         </>
     )
 }

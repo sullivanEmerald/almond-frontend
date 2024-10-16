@@ -1,16 +1,16 @@
 import AuthLinks from "../components/authlinks";
 import AdminLinks from "../components/links";
 import AppLogo from "../components/logo"
-const ADMIN_NAV = () => {
+const AdminHeader = () => {
     return (
         <>
-            <nav>
+            <header className="admin_header">
                 <AppLogo />
                 <AdminLinks />
                 <AuthLinks />
-            </nav>
+            </header>
         </>
     )
 }
 
-export default ADMIN_NAV;
+export default AdminHeader;

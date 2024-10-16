@@ -2,6 +2,9 @@
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import loginData from '../data/logins';
+import Redirectlink from '../subcomponents/redirectlink';
+import { routes } from '../apis/panel';
+import SubmitButton from '../subcomponents/submitbbutton';
 
 const LoginForm = () => {
     return (
@@ -24,11 +27,9 @@ const LoginForm = () => {
                     </Form.Group>
                 ))}
 
-                <button type="submit">Submit</button>
+                <SubmitButton label='Login' />
 
-                <Link className='auth_redirect_link' to='/admin/register'>
-                    Don't have an account? Sign up
-                </Link>
+                <Redirectlink to={routes.register} question="Dont't have an account? sign up" />
             </Form>
         </>
     );
