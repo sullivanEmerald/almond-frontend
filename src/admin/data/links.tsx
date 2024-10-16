@@ -1,30 +1,32 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome , faPlus, faEye, faTrademark} from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faEye, faTrademark } from "@fortawesome/free-solid-svg-icons";
+import { product, trades, orders } from "../apis/panel";
 
 const Navlinks = [
-    {
-        label : 'Home',
-        href : '.',
-        icon : <FontAwesomeIcon icon={faHome} />
-    }, 
 
     {
-        label : 'Create product',
-        href : 'create',
-        icon : <FontAwesomeIcon icon={faPlus} />
-    }, 
+        label: 'Create product',
+        href: product.create,
+        icon: <FontAwesomeIcon icon={faPlus} />
+    },
 
     {
-        label : 'View Products',
-        href : 'products',
-        icon : <FontAwesomeIcon icon={faEye} />
-    }, 
+        label: 'View Products',
+        href: product.view,
+        icon: <FontAwesomeIcon icon={faEye} />
+    },
 
     {
-        label : 'View Trades',
-        href : 'trades',
-        icon : <FontAwesomeIcon icon={faTrademark} />
-    }, 
+        label: 'View Trades',
+        href: trades.view,
+        icon: <FontAwesomeIcon icon={faTrademark} />
+    },
+
+    {
+        label: 'View Orders',
+        href: orders.view,
+        icon: <FontAwesomeIcon icon={faEye} />
+    },
 
 
 

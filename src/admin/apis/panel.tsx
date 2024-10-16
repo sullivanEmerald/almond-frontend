@@ -1,33 +1,26 @@
+import relativeRoutes from "../relativeroutes/routes"
+const { route, item, order, trade} = relativeRoutes
 
-const route = '/admin'
-const product = '/product'
 
 const adminApis = {
     routes: {
-        login: route,
+        index: route,
         register: 'register',
     },
-
     admin: {
         dashboard: 'dashboard',
     },
-
-    items: {
-        create: 'create' + product,
-        view:  'view' + product
+    product: {
+        create: `${item}/create`,
+        view: `${item}s`
     },
-
-    orders : {
-        create: route + '/orders',
-        view: route + '/all/orders'
+    orders: {
+        view: `${order}s`
     },
-
-    trades : {
-        create: route + '/trades',
-        view: route + '/all/orders'
+    trades: {
+        view: `${trade}s`
     },
-
 }
-const { routes, admin, items,  orders, trades } = adminApis; 
+const { routes, admin, product, orders, trades } = adminApis;
 
-export { routes, admin, items, orders, trades}
+export { routes, admin, product, orders, trades }

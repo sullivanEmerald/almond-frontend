@@ -1,5 +1,5 @@
 
-const Home = () => {
+const Dashboard = () => {
   return (
     <>
       <p>This is the admin page</p>
@@ -7,4 +7,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Dashboard;

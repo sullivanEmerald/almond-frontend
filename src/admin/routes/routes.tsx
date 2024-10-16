@@ -3,14 +3,14 @@ import ADMIN_PAGES from "@/admin/adminpages/allpages";
 import Adminlayout from "@/admin/middleware/adminlayout";
 import '@/admin/styles/main.css'
 import MainLayout from "../middleware/mainlayout";
-import { routes, admin, items} from "../apis/panel";
+import { routes, admin, product} from "../apis/panel";
 
-const { HOME, CREATE, LOGIN, REGISTER } = ADMIN_PAGES;
+const { DASHBOARD, CREATE, LOGIN, REGISTER , PRODUCTS} = ADMIN_PAGES;
 
 const AdminRoutes = () => {
     return (
         <Routes>
-            <Route path="admin">
+            <Route path={routes.index}>
                 {/* Login route without AdminLayout */}
                 <Route element={<MainLayout />}>
                     <Route index element={<LOGIN />} />
@@ -19,8 +19,9 @@ const AdminRoutes = () => {
 
                 {/* Other admin routes with AdminLayout */}
                 <Route element={<Adminlayout />}>
-                    <Route path={admin.dashboard} element={<HOME />} />
-                    <Route path={items.create} element={<CREATE />} />
+                    <Route path={admin.dashboard} element={<DASHBOARD />} />
+                    <Route path={product.create} element={<CREATE />} />
+                    <Route path={product.view} element={<PRODUCTS />}/>
                 </Route>
             </Route>
         </Routes>
