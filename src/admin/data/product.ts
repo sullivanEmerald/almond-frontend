@@ -3,7 +3,7 @@ const productFormData = [
         controlId: 'formBasicName',
         label: 'Name',
         type: 'text',
-        placeholder: 'Enter Product Name',
+        placeholder: 'enter product name',
         name: 'name',
     },
 
@@ -12,7 +12,7 @@ const productFormData = [
         controlId: 'formBasicDescription',
         label: 'Description',
         type: 'text',
-        placeholder: 'Enter Description',
+        placeholder: 'enter description',
         name: 'desciption',
     },
 

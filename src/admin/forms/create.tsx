@@ -17,7 +17,7 @@ const ProductForm = () => {
                         placeholder={placeholder}
                     />
                 ))}
-                <SubmitButton label='Create Product' /> {/* Include a submit button */}
+                <SubmitButton label='Create Product' /> 
             </Form>
         </>
     );
