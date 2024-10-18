@@ -1,9 +1,12 @@
 import { Form } from 'react-bootstrap';
-import SubmitButton from '../subcomponents/submitbbutton';
 import productFormData from '../data/product';
 import FormGroup from '../components/formgroup';
+import useStore from '../stores/store';
 
 const ProductForm = () => {
+
+    const data = useStore((state) => state.data)
+
     return (
         <>
             <Form className='form-container'>
@@ -17,7 +20,9 @@ const ProductForm = () => {
                         placeholder={placeholder}
                     />
                 ))}
-                <SubmitButton label='Create Product' /> 
+                <button type='submit' disabled={Object.values(data).some((item) => item === '')}>
+                    Create Product    
+                </button> 
             </Form>
         </>
     );

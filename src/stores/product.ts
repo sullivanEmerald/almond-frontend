@@ -1,6 +1,5 @@
 import { StateCreator } from 'zustand';
 import { Product } from '../types/product';
-import { UseQueryResult } from '@tanstack/react-query';
 
 export interface ProductsData {
     success: boolean;
@@ -21,8 +20,6 @@ export type ProductSlice = ProductState & ProductActions;
 
 export const createProductSlice: StateCreator<ProductSlice> = (set) => ({
     products: [],
-
-   
 
     setProducts: (products) => set({ products }),
 
