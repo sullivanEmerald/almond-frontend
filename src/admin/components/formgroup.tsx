@@ -1,21 +1,14 @@
-import { Form } from 'react-bootstrap';
+import { Form, Image } from 'react-bootstrap';
 import { FormData } from '../types/form';
 import SelectCategory from '../category/select';
 import useStore from '../stores/store';
 import CreateProduct from '../types/product';
-import { HandleInputChange } from '../actions/product';
+import { HandleInputChange, HandleFileChange } from '../actions/product';
 
 const FormGroup: React.FC<FormData> = ({ controlId, label, type, name, placeholder }) => {
-
-    const value = useStore((state) => state.data[name as keyof CreateProduct])
-
+    const value = useStore((state) => state.data[name as keyof CreateProduct]);
     const setData = useStore((state) => state.setData);
-
-    const data = useStore((state) => state.data);
-
-    console.log(data)
-
-
+    const imagePreview = useStore((state) => state.imagePreview);
 
     return (
         <>
@@ -25,20 +18,40 @@ const FormGroup: React.FC<FormData> = ({ controlId, label, type, name, placehold
                 {type === 'select' ? (
                     <SelectCategory name={name} value={value as string} />
                 ) : (
-                    <Form.Control
-                        type={type}
-                        placeholder={placeholder}
-                        name={name}
-                        value={value as string}
-                        className='formInputField'
-                        onChange={(e) => HandleInputChange(e, setData)}
-                    />
+                    <>
+                        {type === 'file' ? (
+                            <>
+                                <Form.Control
+                                    type="file"
+                                    name={name}
+                                    accept="image/*"
+                                    className="formInputField"
+                                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => HandleFileChange(e)}
+                                />
+                                {imagePreview && (
+                                    <Image
+                                        src={imagePreview}
+                                        alt="Image Preview"
+                                        fluid
+                                        className="mt-3"
+                                        style={{ maxWidth: '200px', maxHeight: '200px', objectFit: 'cover' }}
+                                    />
+                                )}
+                            </>
+                        ) : (
+                            <Form.Control
+                                type={type}
+                                placeholder={placeholder}
+                                name={name}
+                                value={value as string}
+                                className="formInputField"
+                                onChange={(e) => HandleInputChange(e, setData)}
+                            />
+                        )}
+                    </>
                 )}
             </Form.Group>
-
         </>
-
-
     );
 };
 

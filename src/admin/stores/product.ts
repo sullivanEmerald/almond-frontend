@@ -19,7 +19,7 @@ const initialState: CreateProduct = {
     description: '',
     price: '',
     category: '',
-    image: null
+    image: ''
 };
 
 export const createProductSlice: StateCreator<ProductSlice> = (set) => ({
