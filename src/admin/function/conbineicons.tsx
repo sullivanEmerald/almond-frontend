@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import iconDefinition from "../types/icon"
+import IconPair from "../types/icon"
 
-export const conbineIcons : React.FC<iconDefinition> =  (iconFirst, iconSecond) => {
+export const conbineIcons : React.FC<IconPair> =  ({ iconFirst, iconSecond}) => {
     return (
         <>
             <span>
@@ -11,3 +11,5 @@ export const conbineIcons : React.FC<iconDefinition> =  (iconFirst, iconSecond) 
         </>
     )
 }
+
+export default conbineIcons;

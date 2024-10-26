@@ -8,6 +8,7 @@ import { routes, admin, product} from "../apis/panel";
 const { DASHBOARD, CREATE, LOGIN, REGISTER , PRODUCTS} = ADMIN_PAGES;
 
 const AdminRoutes = () => {
+
     return (
         <Routes>
             <Route path={routes.index}>
@@ -15,6 +16,7 @@ const AdminRoutes = () => {
                 <Route element={<MainLayout />}>
                     <Route index element={<LOGIN />} />
                     <Route path={routes.register} element={<REGISTER />} />
+                    <Route path='sullivan' element={<p>Sullivan, the greatest software Engineer</p>} />
                 </Route>
 
                 {/* Other admin routes with AdminLayout */}
