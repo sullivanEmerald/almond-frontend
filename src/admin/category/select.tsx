@@ -1,7 +1,7 @@
 import { Form } from 'react-bootstrap';
 import Categories from './categories';
 import { HandleInputChange } from '../actions/product'
-import useStore from '../stores/store';
+
 
 interface SelectValues {
     name: string,

@@ -9,12 +9,6 @@ export const HandleInputChange = (event: React.ChangeEvent<HTMLInputElement | HT
 };
 
 
-export const HandleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = event.target;
-    setData(name as keyof CreateProduct, value);
-};
-
-
 export const HandleFileChange = (e: React.ChangeEvent<HTMLInputElement>,) => {
     const file = e.target.files?.[0];
 
