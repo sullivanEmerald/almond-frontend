@@ -13,7 +13,7 @@ const productFormData = [
         label: 'Description',
         type: 'text',
         placeholder: 'enter description',
-        name: 'desciption',
+        name: 'description',
     },
 
     {

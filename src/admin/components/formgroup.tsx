@@ -1,6 +1,6 @@
 import { Form, Image} from 'react-bootstrap';
 import { FormData } from '../types/form';
-import SelectCategory from '../category/select';
+import SelectCategory from '../category/Select';
 import useStore from '../stores/store';
 import CreateProduct from '../types/product';
 import { HandleInputChange, HandleFileChange } from '../actions/product';
@@ -16,6 +16,7 @@ const FormGroup: React.FC<FormData> = ({ controlId, label, type, name, placehold
     return (
         <>
             <Form.Group controlId={controlId}>
+                
                 <Form.Label>{label}</Form.Label>
 
                 {type === 'select' ? (
