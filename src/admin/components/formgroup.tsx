@@ -9,21 +9,22 @@ import { HandleInputChange, HandleFileChange } from '../actions/product';
 const FormGroup: React.FC<FormData> = ({ controlId, label, type, name, placeholder, multiple }) => {
     const value = useStore((state) => state.data[name as keyof CreateProduct]) || '';
     const imagePreview = useStore((state) => state.imagePreview);
+    const multipleImagePreviews = useStore((state) => state.multipleImagePreview || []);
+
+
 
     return (
         <>
             <Form.Group controlId={controlId}>
-
                 <Form.Label>
                     {multiple ? (
                         <>
-                            {label} <sup className='formAsteriks'>*</sup>
+                            {label} <sup className="formAsteriks">*</sup>
                         </>
                     ) : (
                         label
                     )}
                 </Form.Label>
-
 
                 {type === 'select' ? (
                     <SelectCategory name={name} />
@@ -39,8 +40,19 @@ const FormGroup: React.FC<FormData> = ({ controlId, label, type, name, placehold
                                     onChange={HandleFileChange}
                                     multiple={Boolean(multiple)}
                                 />
-                                {imagePreview && (
-                                    <ImagePreview imageUrl={imagePreview} />
+
+                                {multiple ? (
+                                    <div className="mt-3 d-flex flex-wrap gap-2 justify-content-evenly">
+                                        {multipleImagePreviews.map((preview, index) => (
+                                            <ImagePreview key={index} imageUrl={preview} resize={true} />
+                                        ))}
+                                    </div>
+                                ) : (
+                                    imagePreview && (
+                                        <div className="mt-3 d-flex flex-wrap gap-2 justify-content-evenly">
+                                            <ImagePreview imageUrl={imagePreview} resize={false} />
+                                        </div>
+                                    )
                                 )}
                             </>
                         ) : (

@@ -11,19 +11,25 @@ export const HandleInputChange = (event: React.ChangeEvent<HTMLInputElement | HT
 
 
 export const HandleFileChange = async (e: React.ChangeEvent<HTMLInputElement>,) => {
-    const file = e.target.files?.[0];
 
-    const setImagePreview = useStore.getState().setImagePreview;
-    const imageFile = useStore.getState().setImageFile;
-    
 
-    if (file) {
-        const previewUrl = URL.createObjectURL(file)
+    const file = e.target.files;
 
-        setImagePreview(previewUrl)
 
-        imageFile(file)
+    if (!file) return;
 
+    if (e.target.multiple) {
+
+        const fileArray = Array.from(file)
+        const previews = fileArray.map(file => URL.createObjectURL(file));
+
+        useStore.getState().setMultipleImagePreviews(previews);
+
+    } else {
+
+        const previewUrl = URL.createObjectURL(file[0]);
+
+        useStore.getState().setImagePreview(previewUrl)
     }
 
     return;
