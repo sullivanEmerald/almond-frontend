@@ -1,9 +1,15 @@
+ type ImageType = {
+    secure_url: string;
+     public_id: string
+}
+
 interface CreateProduct {
     name : string,
     description : string,
     price : string,
     category : string,
-    image : any
+    image : ImageType | null,
+    subImage : ImageType[]
 
 }
 

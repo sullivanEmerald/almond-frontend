@@ -8,15 +8,11 @@ import { HandleInputChange, HandleFileChange } from '../actions/product';
 const FormGroup: React.FC<FormData> = ({ controlId, label, type, name, placeholder }) => {
     const value = useStore((state) => state.data[name as keyof CreateProduct]) || '';
     const imagePreview = useStore((state) => state.imagePreview);
-    const data = useStore((state) => state.data)
-
-    console.log(data)
-
 
     return (
         <>
             <Form.Group controlId={controlId}>
-                
+
                 <Form.Label>{label}</Form.Label>
 
                 {type === 'select' ? (

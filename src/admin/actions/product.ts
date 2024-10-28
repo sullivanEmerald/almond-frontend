@@ -1,13 +1,7 @@
 import CreateProduct from "../types/product";
 import useStore from "../stores/store";
-const setData = useStore.getState().setData;
-const cloudName = import.meta.env.VITE_CLOUD_NAME;
-const apiKey = import.meta.env.VITE_API_KEY;
 
-console.log('VARIABLES', {
-cloudName,
-apiKey
-} )
+const setData = useStore.getState().setData;
 
 
 export const HandleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -16,18 +10,21 @@ export const HandleInputChange = (event: React.ChangeEvent<HTMLInputElement | HT
 };
 
 
-export const HandleFileChange = (e: React.ChangeEvent<HTMLInputElement>,) => {
+export const HandleFileChange = async (e: React.ChangeEvent<HTMLInputElement>,) => {
     const file = e.target.files?.[0];
 
-    console.log(file)
-
     const setImagePreview = useStore.getState().setImagePreview;
+    const imageFile = useStore.getState().setImageFile;
+    
 
     if (file) {
         const previewUrl = URL.createObjectURL(file)
 
         setImagePreview(previewUrl)
+
+        imageFile(file)
+
     }
 
-    return null;
+    return;
 }
