@@ -1,7 +1,6 @@
 import { Form } from 'react-bootstrap';
 import productFormData from '../data/product';
 import FormGroup from '../components/formgroup';
-import useStore from '../stores/store';
 import CreateProductButton from '../buttons/CreateProductButton';
 const ProductForm = () => {
 
@@ -9,7 +8,7 @@ const ProductForm = () => {
     return (
         <>
             <Form className='form-container'>
-                {productFormData.map(({ controlId, label, type, name, placeholder }) => (
+                {productFormData.map(({ controlId, label, type, name, placeholder, multiple }) => (
                     <FormGroup
                         key={controlId} 
                         controlId={controlId}
@@ -17,6 +16,7 @@ const ProductForm = () => {
                         type={type}
                         name={name}
                         placeholder={placeholder}
+                        multiple={multiple}
                     />
                 ))}
                 <CreateProductButton label='Create Product'/>

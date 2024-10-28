@@ -38,6 +38,16 @@ const productFormData = [
         type: 'file',
         placeholder: 'choose Image',
         name: 'image',
+        multiple : false
+    },
+
+    {
+        controlId: 'formBasicImages',
+        label: 'Choose Additional Images (optional)',
+        type: 'file',
+        placeholder: 'choose Image',
+        name: 'images',
+        multiple : true
     },
 ]
 

@@ -4,4 +4,5 @@
     placeholder? : string,
     type : string | any,
     label : string,
+    multiple? : boolean
 }

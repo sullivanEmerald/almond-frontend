@@ -1,9 +1,13 @@
+@import '../styles/variables.css';
+
+
 /****************************************
     COMMON SYLINGS :  BUTTON, INPUTS
 *****************************************/
+
 button {
-    background: #15357a;
-    color: #FFF;
+    background: var(--primary-color);
+    color: var(--white-color);
     text-align: center;
     font-size: 25px;
     font-weight: 500;
@@ -32,7 +36,7 @@ button:disabled {
 *****************************************/
 .AdminProjectLinks {
     text-decoration: none;
-    color: #15357a;
+    color: var(--primary-color);
     padding: 10px;
     transition: all 0.3s ease-in;
     font-size: 20px;
@@ -40,7 +44,7 @@ button:disabled {
 }
 
 .AdminProjectLinks:hover {
-    background: #15357a;
+    background: var(--primary-color);
     color: #fff;
     border-radius: 9999px;
     transform: scale(1.1)
@@ -56,7 +60,7 @@ button:disabled {
 .formDesignSetup {
     width: 50%;
     margin: 2% auto;
-    border: 1px solid #15357a;
+    border: 1px solid var(--background-color);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
@@ -78,7 +82,7 @@ button:disabled {
 
 
 .formInputField {
-    border-color: #15357a; 
+    border-color: var(--background-color); 
     box-shadow: none !important; 
     border-radius: 5px; 
     padding: 10px; 
@@ -86,7 +90,13 @@ button:disabled {
 
 .fieldLabel{
     padding: 0 10px;
-    color: #15357a;
+    color: var(--background-color);
+}
+
+.formAsteriks{
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 15px;
 }
 
 /****************************************
@@ -94,8 +104,8 @@ button:disabled {
 *****************************************/
 
 .Login-header {
-    background: #15357a;
-    color: #FFF;
+    background: var(--primary-color);
+    color: var(--white-color);
     border-radius: 0 0 5px 5px;
     text-align: center;
     font-size: 25px;
@@ -116,7 +126,7 @@ button:disabled {
     padding: 15px;
     font-size: 20px;
     font-weight: bold;
-    color: #15357a;
+    color: var(--primary-color);
 }
 
 .mainHeader{
@@ -151,16 +161,18 @@ button:disabled {
 
 .admin_goto{
     text-decoration: none;
-    color: #15357a;
+    color: var(--primary-color);
     padding: 10px;
 }
 .admin_goto:hover{
-    color: #FFF;
-    background: #15357a;
+    color: var(--white-color);
+    background: var(--primary-color);
     border-radius: 9999px;
 }
 .projectAdminLogo {
     flex-basis: 10%;
 }
+
+
 
 
